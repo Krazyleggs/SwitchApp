@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Switcheroo.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Switcheroo
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new ViewModel_Main(this);
         }
     }
 }
