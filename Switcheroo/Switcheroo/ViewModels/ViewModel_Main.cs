@@ -1,9 +1,5 @@
-﻿using Android.Views;
-using SQLite;
+﻿using SQLite;
 using Switcheroo.DataAccess;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 
@@ -16,6 +12,7 @@ namespace Switcheroo.ViewModels
 
         //the Contentpage we control
         private readonly ContentPage _window;
+
         private string _personowing;
 
         #endregion
@@ -54,20 +51,18 @@ namespace Switcheroo.ViewModels
 
         #endregion
 
-        #region Default Contructor 
+        #region Default ConStructor 
 
         public ViewModel_Main (ContentPage window)
         {
      
             _window = window;
+
+            //initializing private member from database
             _personowing = DataAccess.DataAccess.GetPersonOwing();
 
             var db = new SQLiteConnection(ConnectionStringHelper.GetConnection());
             db.CreateTable<OwingDataModel>();
-            //var HMM = new OwingDataModel();
-            //HMM.Date = DateTime.Now;
-            //HMM.PersonOwing = "Robin";
-            //db.Insert(HMM);
 
             //Initializing commands
             SwitchOwingCommand = new RelayCommand(() => {DataAccess.DataAccess.SwitchPersonOwing(PersonOwing);
@@ -76,7 +71,5 @@ namespace Switcheroo.ViewModels
         }
 
         #endregion  
-
-
     }
 }

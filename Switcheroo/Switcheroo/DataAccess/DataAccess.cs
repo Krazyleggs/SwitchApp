@@ -10,15 +10,15 @@ namespace Switcheroo.DataAccess
     class DataAccess
     {
 
-        //Get Value of Data
+        //Return name of person who is currently owing from db
         public static string GetPersonOwing()
         {
             var db = new SQLiteConnection(ConnectionStringHelper.GetConnection());
             var query = db.Table<OwingDataModel>().OrderByDescending(v => v.Transaction_id).First();
             return query.PersonOwing;
-                //OrderBy(v => v.Transaction_id.)
         }
-        //SQLiteConnection db,
+
+        //Switch name of person owing then update database
         public static void SwitchPersonOwing (string CurrentPersonOwing)
         {
             var db = new SQLiteConnection(ConnectionStringHelper.GetConnection());

@@ -7,6 +7,8 @@ namespace Switcheroo.DataAccess
 {
     class OwingDataModel
     {
+
+        //DataModel ie. Database elements for this class
         [PrimaryKey, AutoIncrement]
         public int Transaction_id {get; set;}
         [Indexed]

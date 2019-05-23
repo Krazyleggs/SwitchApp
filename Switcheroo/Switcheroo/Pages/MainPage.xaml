@@ -13,8 +13,6 @@
             <RowDefinition Height="{Binding DisplayButtonThickness}"/>
             <!--Funny text-->
             <RowDefinition Height ="20"/>
-            <!--Funny text-->
-            <RowDefinition Height ="20"/>
         </Grid.RowDefinitions>
         
         <!--Title Bar-->
@@ -25,8 +23,6 @@
 
         <!--Disclosure-->
         <Label Grid.Row="2" Text="{Binding PersonOwing }" HorizontalOptions="Center"/>
-
-        <Button Grid.Row="3" Text="{Binding PersonOwing}" HorizontalOptions="Center" Command="{Binding GetPersonOwing}"/>
     </Grid>
 
 
